@@ -168,7 +168,7 @@ while opcao != 5:
             print(f"O maior preço de combustível é do posto {nomePosto1}, com o gasto total de R${maiorPrecoCombustivel}")
         
         economizou = maiorPrecoCombustivel - menorPrecoCombustivel
-        print(f"Valor a ser economizado caso a escolha seja o posto com o menor preço: R${economizou}")
+        print(f"Valor a ser economizado caso a escolha seja o posto com o menor preço: R${economizou}\n")
         
         #MENORES PREÇOS DOS POSTOS 
         #Menor valor de gasolina
@@ -238,10 +238,6 @@ while opcao != 5:
             elif menorValorDiesel == dieselPreco3:
                 qtdMenorPreco_Posto3 += 1
 
-        print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
-        print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
-        print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
-
         #CÁLCULO DA MÉDIA DE LITROS CONSULTADOS:
         if contadorConsultas > 0: 
             if qtdMenorPreco_Posto1 > 0: 
@@ -303,12 +299,11 @@ while opcao != 5:
             print("Para inserir os dados, digite 1 no menu e siga as intruções.\n")
             
         else:
-            print("----------------------------------------------------------------------------------------")
+            print("\n-----------------------------------------")
             print("Informações da última pesquisa realizada ")
             print("-----------------------------------------")
             print(f"Tipo de combustível: {nomeDoCombustivel}")
             print(f"Litragem do combustível escolhido: {litragem}")
-
 
 
     #OPÇÃO 3
@@ -346,29 +341,30 @@ while opcao != 5:
             print("Para inserir os dados, digite 1 no menu e siga as intruções.\n")
             
         else:
+            print("-------------------------------------------------------")
             print("RELATÓRIO")
-            print("-----------------------------------------")
+            print("-------------------------------------------------------")
             print(f"Quantidade de consultas realizadas: {contadorConsultas}")
             print(f"Quantidade de vezes que cada posto teve o menor preço: ")
             print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
             print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
             print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
-            print("-------------------------------------------------------------")
+            print("-------------------------------------------------------")
             
             print("Média de litros consultados por posto: ")
             print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.2f}")
             print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.2f}")
             print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.2f}")
-            print("-------------------------------------------------------------")
+            print("-------------------------------------------------------")
 
             print("Relação de preços")
-            print("-------------------------------------------------------------")
+            print("-------------------------------------------------------")
             print(f"GASOLINA\nMenor preço: R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}\nMaior preço: R${maiorValorGasolina:.2f} no posto {postoGasolinaMaior}")
-            print("-------------------------------------------------------------")
+            print("-------------------------------------------------------")
             print(f"ETANOL\nMenor preço: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}\nMaior preço: R${maiorValorEtanol:.2f} no posto {postoEtanolMaior}")
-            print("-------------------------------------------------------------")
-            print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}")
-            print("-------------------------------------------------------------")
+            print("-------------------------------------------------------")
+            print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}\n")
+       
 
     elif opcao == 5:
         print("----------------------------------------------------------------------------------------")
@@ -378,29 +374,29 @@ while opcao != 5:
         
     #print('\033c', end='') Para limpar tela mas preciso dar um jeito melhor
 
-    if contadorConsultas != 0:
-        print("RELATÓRIO FINAL")
-        print("-----------------------------------------")
-        print(f"Quantidade de consultas realizadas: {contadorConsultas}")
-        print(f"Quantidade de vezes que cada posto teve o menor preço: ")
-        print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
-        print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
-        print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
-        print("-------------------------------------------------------------")
+if contadorConsultas != 0:
+    print("RELATÓRIO FINAL")
+    print("-----------------------------------------")
+    print(f"Quantidade de consultas realizadas: {contadorConsultas}")
+    print(f"Quantidade de vezes que cada posto teve o menor preço: ")
+    print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
+    print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
+    print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
+    print("-------------------------------------")
 
-        print("Média de litros consultados por posto: ")
-        print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.2f}")
-        print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.2f}")
-        print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.2f}")
-        print("-------------------------------------------------------------")
+    print("Média de litros consultados por posto: ")
+    print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.2f}")
+    print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.2f}")
+    print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.2f}")
+    print("-------------------------------------------------")
 
-        print("Relação de preços")
-        print("-------------------------------------------------------------")
-        print(f"GASOLINA\nMenor preço: R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}\nMaior preço: R${maiorValorGasolina:.2f} no posto {postoGasolinaMaior}")
-        print("-------------------------------------------------------------")
-        print(f"ETANOL\nMenor preço: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}\nMaior preço: R${maiorValorEtanol:.2f} no posto {postoEtanolMaior}")
-        print("-------------------------------------------------------------")
-        print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}")
-        print("-------------------------------------------------------------")
-    else:
-        print("Encerrando sem a realização da pesquisa\n")
+    print("Relação de preços")
+    print("-------------------------------------------------")
+    print(f"GASOLINA\nMenor preço: R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}\nMaior preço: R${maiorValorGasolina:.2f} no posto {postoGasolinaMaior}")
+    print("-------------------------------------------------")
+    print(f"ETANOL\nMenor preço: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}\nMaior preço: R${maiorValorEtanol:.2f} no posto {postoEtanolMaior}")
+    print("-------------------------------------------------")
+    print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}")
+    print("-------------------------------------------------")
+else:
+    print("Encerrando sem a realização da pesquisa\n")
