@@ -299,17 +299,23 @@ while opcao != 5:
             print("Para inserir os dados, digite 1 no menu e siga as intruções.\n")
             
         else:
-            print("\n-----------------------------------------")
+            print("\n----------------------------------------------------------------")
             print("Informações da última pesquisa realizada ")
-            print("-----------------------------------------")
+            print("----------------------------------------------------------------")
             print(f"Tipo de combustível: {nomeDoCombustivel}")
-            print(f"Litragem do combustível escolhido: {litragem}")
+            print(f"Litragem do combustível escolhido: {litragem} litros")
+            if tipoCombustivel == 1:
+                print(f"Menor valor do combustível escolhido é de R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}")
+            elif tipoCombustivel == 2: 
+                print(f"Menor valor do combustível escolhido é de: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}")
+            elif tipoCombustivel == 3:
+                print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}")
 
 
     #OPÇÃO 3
     elif opcao == 3:
-        print("\n.........................")
-        print(f"Posto: {nomePosto1}")
+        print("\n-------------------------")
+        print(f"Posto {nomePosto1}")
         print("-------------------------")
         print(f"Preços do posto {nomePosto1}")
         print("-------------------------")
@@ -317,8 +323,8 @@ while opcao != 5:
         print(f"Etanol: R${etanolPreco1}")
         print(f"Diesel: R${dieselPreco1}")
  
-        print("\n.........................")
-        print(f"Posto: {nomePosto2}")
+        print("-------------------------")
+        print(f"Posto {nomePosto2}")
         print("-------------------------")
         print(f"Preços do posto {nomePosto2}")
         print("-------------------------")
@@ -326,8 +332,8 @@ while opcao != 5:
         print(f"Etanol: R${etanolPreco2}")
         print(f"Diesel: R${dieselPreco2}")
 
-        print("\n.........................")
-        print(f"Posto: {nomePosto3}")
+        print("\n-------------------------")
+        print(f"Posto {nomePosto3}")
         print("-------------------------")
         print(f"Preços do posto {nomePosto3}")
         print("-------------------------")
