@@ -100,7 +100,7 @@ while opcao != 5:
     #OPÇÃO 1
     if opcao == 1:
         contadorConsultas += 1
-        tipoCombustivel = int(input("Qual combustível você deseja? [Gasolina(1), Etanol(2) ou Diesel(3)] "))
+        tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
         litragem = float(input("Informe a litragem desejada: "))
         while litragem <= 0:
             if litragem <= 0:
@@ -309,7 +309,7 @@ while opcao != 5:
             elif tipoCombustivel == 2: 
                 print(f"Menor valor do combustível escolhido é de: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}")
             elif tipoCombustivel == 3:
-                print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}")
+                print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\n")
 
 
     #OPÇÃO 3
@@ -376,9 +376,11 @@ while opcao != 5:
         print("----------------------------------------------------------------------------------------")
 
     else:
-        print("ERRO! Digite apenas números de 1 a 5!")
+        print("ERRO! Digite apenas números de 1 a 5!\n")
         
-    #print('\033c', end='') Para limpar tela mas preciso dar um jeito melhor
+    limpar = input("Deseja limpar a tela? [S/N]: ")
+    if limpar == "S" or limpar == "s":
+        print('\033c', end='') #Para limpar tela caso o usuário deseje
 
 if contadorConsultas != 0:
     print("RELATÓRIO FINAL")
