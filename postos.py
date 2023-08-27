@@ -25,26 +25,29 @@ mediaLitrosCons_posto1 = 0
 mediaLitrosCons_posto2 = 0
 mediaLitrosCons_posto3 = 0
 
-"""
-nomePosto1 = input("Digite o nome do posto 1: ")
+print("----------------------------------------------------------------------------------------")
+print("                                  CADASTRO DOS POSTOS                                   ")
+print("----------------------------------------------------------------------------------------")
+
+nomePosto1 = input("Digite o nome do primeiro posto: ")
 gasolinaPreco1 = float(input(f"Digite o preço da gasolina no posto {nomePosto1}: "))
 etanolPreco1 = float(input(f"Digite o preço do etanol no posto {nomePosto1}: "))
 dieselPreco1 = float(input(f"Digite o preço do diesel no posto {nomePosto1}: "))
 print("\n")
 
-nomePosto2 = input("Digite o nome do posto 2: ")
+nomePosto2 = input("Digite o nome do segundo posto: ")
 gasolinaPreco2 = float(input(f"Digite o preço da gasolina no posto {nomePosto2}: "))
 etanolPreco2 = float(input(f"Digite o preço do etanol no posto {nomePosto2}: "))
 dieselPreco2 = float(input(f"Digite o preço do diesel no posto {nomePosto2}: "))
 print("\n")
 
-nomePosto3 = input("Digite o nome do posto 3: ")
+nomePosto3 = input("Digite o nome do terceiro posto: ")
 gasolinaPreco3 = float(input(f"Digite o preço da gasolina no posto {nomePosto3}: "))
 etanolPreco3 = float(input(f"Digite o preço do etanol no posto {nomePosto3}: "))
 dieselPreco3 = float(input(f"Digite o preço do diesel no posto {nomePosto3}: "))
 print("\n")
-"""
-#Isso aqui é só para teste
+
+"""#Isso aqui é só para teste
 nomePosto1 = "Posto1"
 nomePosto2 = "Posto2"
 nomePosto3 = "Posto3"
@@ -59,11 +62,7 @@ dieselPreco2 = 4
 
 gasolinaPreco3 = 10
 etanolPreco3 = 6
-dieselPreco3 = 3
-
-contGasolina = 0
-contEtanol = 0
-contDiesel = 0
+dieselPreco3 = 3"""
 
 opcao = 0
 while opcao != 5:
@@ -101,6 +100,10 @@ while opcao != 5:
     if opcao == 1:
         contadorConsultas += 1
         tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
+        while tipoCombustivel > 3:
+            if tipoCombustivel > 3:
+                print("ERRO!\nExistem apenas 3 tipos de combustíveis no sistema, por favor digite apenas de 1 a 3!")
+                tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
         litragem = float(input("Informe a litragem desejada: "))
         while litragem <= 0:
             if litragem <= 0:
@@ -109,21 +112,21 @@ while opcao != 5:
 
         #Contagem das vezes em que cada combustível foi escolhido + soma da litragem de cada um + preço total de cada combustível
         if tipoCombustivel == 1:
-            contGasolina += 1 
+            #contGasolina += 1 
             nomeDoCombustivel = "Gasolina"
             precoGastoPosto1 = gasolinaPreco1 * litragem
             precoGastoPosto2 = gasolinaPreco2 * litragem
             precoGastoPosto3 = gasolinaPreco3 * litragem
 
         elif tipoCombustivel == 2:
-            contEtanol += 1
+            #contEtanol += 1
             nomeDoCombustivel = "Etanol"
             precoGastoPosto1 = etanolPreco1 * litragem
             precoGastoPosto2 = etanolPreco2 * litragem
             precoGastoPosto3 = etanolPreco3 * litragem
 
         elif tipoCombustivel == 3:
-            contDiesel += 1
+            #contDiesel += 1
             nomeDoCombustivel = "Diesel"
             precoGastoPosto1 = dieselPreco1 * litragem
             precoGastoPosto2 = dieselPreco2 * litragem
@@ -358,9 +361,9 @@ while opcao != 5:
             print("-------------------------------------------------------")
             
             print("Média de litros consultados por posto: ")
-            print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.2f}")
-            print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.2f}")
-            print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.2f}")
+            print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.1f} litros")
+            print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.1f} litros")
+            print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.1f} litros")
             print("-------------------------------------------------------")
 
             print("Relação de preços")
@@ -378,9 +381,10 @@ while opcao != 5:
     else:
         print("ERRO! Digite apenas números de 1 a 5!\n")
         
+if opcao != 5:
     limpar = input("Deseja limpar a tela? [S/N]: ")
     if limpar == "S" or limpar == "s":
-        print('\033c', end='') #Para limpar tela caso o usuário deseje
+        print('\033c', end='') #Para limpar tela caso o usuário deseje"
 
 if contadorConsultas != 0:
     print("RELATÓRIO FINAL")
