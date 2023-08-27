@@ -29,7 +29,7 @@ print("-------------------------------------------------------------------------
 print("                                  CADASTRO DOS POSTOS                                   ")
 print("----------------------------------------------------------------------------------------")
 
-nomePosto1 = input("Digite o nome do primeiro posto: ")
+"""nomePosto1 = input("Digite o nome do primeiro posto: ")
 gasolinaPreco1 = float(input(f"Digite o preço da gasolina no posto {nomePosto1}: "))
 etanolPreco1 = float(input(f"Digite o preço do etanol no posto {nomePosto1}: "))
 dieselPreco1 = float(input(f"Digite o preço do diesel no posto {nomePosto1}: "))
@@ -45,9 +45,9 @@ nomePosto3 = input("Digite o nome do terceiro posto: ")
 gasolinaPreco3 = float(input(f"Digite o preço da gasolina no posto {nomePosto3}: "))
 etanolPreco3 = float(input(f"Digite o preço do etanol no posto {nomePosto3}: "))
 dieselPreco3 = float(input(f"Digite o preço do diesel no posto {nomePosto3}: "))
-print("\n")
+print("\n")"""
 
-"""#Isso aqui é só para teste
+#Isso aqui é só para teste
 nomePosto1 = "Posto1"
 nomePosto2 = "Posto2"
 nomePosto3 = "Posto3"
@@ -62,10 +62,10 @@ dieselPreco2 = 4
 
 gasolinaPreco3 = 10
 etanolPreco3 = 6
-dieselPreco3 = 3"""
+dieselPreco3 = 3
 
-opcao = 0
-while opcao != 5:
+opcao = "0"
+while opcao != "5":
     print("----------------------------------------------------------------------------------------")
     print("                                          MENU                                          ")
     print("----------------------------------------------------------------------------------------")
@@ -75,11 +75,15 @@ while opcao != 5:
     print(" 4 - Para exibir o relatório")
     print(" 5 - Para sair")
     print("----------------------------------------------------------------------------------------")
-    opcao = int(input("Digite a opção que deseja seguir: "))
+    opcao = str(input("Digite a opção que deseja seguir: "))
+    while opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
+        if opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
+            print("ERRO! Digite apenas de 1 a 5!")
+            opcao = str(input("Digite a opção que deseja seguir: "))
 
-    while opcao > 5:
+    """while opcao > "5":
         #Para caso o usuário digite um número que não consta no menu
-        if opcao > 5: 
+        if opcao > "5": 
             print("ERRO! Digite apenas números de 1 a 5!")
             print("----------------------------------------------------------------------------------------")
             print("                                          MENU                                          ")
@@ -90,14 +94,14 @@ while opcao != 5:
             print(" 4 - Para exibir o relatório")
             print(" 5 - Para sair")
             print("----------------------------------------------------------------------------------------")
-            opcao = int(input("Digite a opção que deseja seguir: "))
+            opcao = str(input("Digite a opção que deseja seguir: "))"""
 
     """while isinstance(opcao, int) == True:
         opcao = int(input("Digite a opção que deseja seguir: "))"""
     #Tenho que descobrir como não permitir que o usuário digite valores diferentes de números
         
     #OPÇÃO 1
-    if opcao == 1:
+    if opcao == "1":
         contadorConsultas += 1
         tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
         while tipoCombustivel > 3:
@@ -296,7 +300,7 @@ while opcao != 5:
                 postoDieselMaior = nomePosto3
 
     #OPÇÃO 2
-    elif opcao == 2:
+    elif opcao == "2":
         if contadorConsultas == 0:
             print("ERRO! Não há dados disponíveis nesse momento! \nTente inserir as informações inicialmente!")
             print("Para inserir os dados, digite 1 no menu e siga as intruções.\n")
@@ -316,7 +320,7 @@ while opcao != 5:
 
 
     #OPÇÃO 3
-    elif opcao == 3:
+    elif opcao == "3":
         print("\n-------------------------")
         print(f"Posto {nomePosto1}")
         print("-------------------------")
@@ -344,7 +348,7 @@ while opcao != 5:
         print(f"Etanol: R${etanolPreco3}")
         print(f"Diesel: R${dieselPreco3}\n")
 
-    elif opcao == 4:
+    elif opcao == "4":
         if contadorConsultas == 0:
             print("ERRO! Não há dados disponíveis nesse momento! \nTente inserir as informações inicialmente!")
             print("Para inserir os dados, digite 1 no menu e siga as intruções.\n")
@@ -375,13 +379,13 @@ while opcao != 5:
             print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}\n")
        
 
-    elif opcao == 5:
+    elif opcao == "5":
         print("----------------------------------------------------------------------------------------")
 
     else:
         print("ERRO! Digite apenas números de 1 a 5!\n")
         
-if opcao != 5:
+if opcao != "5":
     limpar = input("Deseja limpar a tela? [S/N]: ")
     if limpar == "S" or limpar == "s":
         print('\033c', end='') #Para limpar tela caso o usuário deseje"
