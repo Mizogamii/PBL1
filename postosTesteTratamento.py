@@ -85,33 +85,34 @@ while opcao != "5":
     if opcao == "1":
         contadorConsultas += 1
         tipoCombustivel = str(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
+
+        #Não permite que o usuário digite nada além dos números 1, 2 e 3
         while tipoCombustivel != "1" and tipoCombustivel != "2" and tipoCombustivel != "3":
             if tipoCombustivel != "1" and tipoCombustivel != "2" and tipoCombustivel != "3":
                 print("ERRO!\nExistem apenas 3 tipos de combustíveis no sistema, por favor digite apenas de 1 a 3!")
                 tipoCombustivel = str(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
+
+        #Input da litragem e while para permitir apenas números positivos
         litragem = float(input("Informe a litragem desejada: "))
         while litragem <= 0:
             if litragem <= 0:
                 print("ERRO! Digite números positivos!")
             litragem = float(input("Informe a litragem desejada: "))
 
-        #Contagem das vezes em que cada combustível foi escolhido + soma da litragem de cada um + preço total de cada combustível
+        #Soma da litragem de cada um e preço total de cada combustível
         if tipoCombustivel == "1":
-            #contGasolina += 1 
             nomeDoCombustivel = "Gasolina"
             precoGastoPosto1 = gasolinaPreco1 * litragem
             precoGastoPosto2 = gasolinaPreco2 * litragem
             precoGastoPosto3 = gasolinaPreco3 * litragem
 
         elif tipoCombustivel == "2":
-            #contEtanol += 1
             nomeDoCombustivel = "Etanol"
             precoGastoPosto1 = etanolPreco1 * litragem
             precoGastoPosto2 = etanolPreco2 * litragem
             precoGastoPosto3 = etanolPreco3 * litragem
 
         elif tipoCombustivel == "3":
-            #contDiesel += 1
             nomeDoCombustivel = "Diesel"
             precoGastoPosto1 = dieselPreco1 * litragem
             precoGastoPosto2 = dieselPreco2 * litragem
