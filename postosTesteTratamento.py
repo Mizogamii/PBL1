@@ -360,7 +360,6 @@ while opcao != "5":
             print(f"ETANOL\nMenor preço: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}\nMaior preço: R${maiorValorEtanol:.2f} no posto {postoEtanolMaior}")
             print("-------------------------------------------------------")
             print(f"DIESEL\nMenor preço: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\nMaior preço: R${maiorValorDiesel:.2f} no posto {postoDieselMaior}\n")
-       
 
     elif opcao == "5":
         print("----------------------------------------------------------------------------------------")
