@@ -80,34 +80,15 @@ while opcao != "5":
         if opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
             print("ERRO! Digite apenas de 1 a 5!")
             opcao = str(input("Digite a opção que deseja seguir: "))
-
-    """while opcao > "5":
-        #Para caso o usuário digite um número que não consta no menu
-        if opcao > "5": 
-            print("ERRO! Digite apenas números de 1 a 5!")
-            print("----------------------------------------------------------------------------------------")
-            print("                                          MENU                                          ")
-            print("----------------------------------------------------------------------------------------")
-            print(" 1 - Para inserir o combustível e a litragem desejada")
-            print(" 2 - Para mostrar os dados da pesquisa e o posto com o combustível com menor preço")
-            print(" 3 - Para listar todos os postos e suas respectivas informações")
-            print(" 4 - Para exibir o relatório")
-            print(" 5 - Para sair")
-            print("----------------------------------------------------------------------------------------")
-            opcao = str(input("Digite a opção que deseja seguir: "))"""
-
-    """while isinstance(opcao, int) == True:
-        opcao = int(input("Digite a opção que deseja seguir: "))"""
-    #Tenho que descobrir como não permitir que o usuário digite valores diferentes de números
         
     #OPÇÃO 1
     if opcao == "1":
         contadorConsultas += 1
-        tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
-        while tipoCombustivel > 3:
-            if tipoCombustivel > 3:
+        tipoCombustivel = str(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
+        while tipoCombustivel != "1" and tipoCombustivel != "2" and tipoCombustivel != "3":
+            if tipoCombustivel != "1" and tipoCombustivel != "2" and tipoCombustivel != "3":
                 print("ERRO!\nExistem apenas 3 tipos de combustíveis no sistema, por favor digite apenas de 1 a 3!")
-                tipoCombustivel = int(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
+                tipoCombustivel = str(input("Digite a sua escolha de combustível [Gasolina(1), Etanol(2) ou Diesel(3)]: "))
         litragem = float(input("Informe a litragem desejada: "))
         while litragem <= 0:
             if litragem <= 0:
@@ -115,21 +96,21 @@ while opcao != "5":
             litragem = float(input("Informe a litragem desejada: "))
 
         #Contagem das vezes em que cada combustível foi escolhido + soma da litragem de cada um + preço total de cada combustível
-        if tipoCombustivel == 1:
+        if tipoCombustivel == "1":
             #contGasolina += 1 
             nomeDoCombustivel = "Gasolina"
             precoGastoPosto1 = gasolinaPreco1 * litragem
             precoGastoPosto2 = gasolinaPreco2 * litragem
             precoGastoPosto3 = gasolinaPreco3 * litragem
 
-        elif tipoCombustivel == 2:
+        elif tipoCombustivel == "2":
             #contEtanol += 1
             nomeDoCombustivel = "Etanol"
             precoGastoPosto1 = etanolPreco1 * litragem
             precoGastoPosto2 = etanolPreco2 * litragem
             precoGastoPosto3 = etanolPreco3 * litragem
 
-        elif tipoCombustivel == 3:
+        elif tipoCombustivel == "3":
             #contDiesel += 1
             nomeDoCombustivel = "Diesel"
             precoGastoPosto1 = dieselPreco1 * litragem
@@ -148,16 +129,16 @@ while opcao != "5":
 
         if precoGastoPosto2 < menorPrecoCombustivel and precoGastoPosto2 < precoGastoPosto3:
             menorPrecoCombustivel = precoGastoPosto2
-            print(f"O menor preço de combustível é do posto {nomePosto2}, com o gasto total de R${menorPrecoCombustivel}")
+            print(f"O menor preço de combustível escolhido é do posto {nomePosto2}, com o gasto total de R${menorPrecoCombustivel}")
             somaConsultadoPosto2 += litragem
 
         elif precoGastoPosto3 < menorPrecoCombustivel and precoGastoPosto3 < precoGastoPosto2:
             menorPrecoCombustivel = precoGastoPosto3
-            print(f"O menor preço de combustível é do posto {nomePosto3}, com o gasto total de R${menorPrecoCombustivel}")
+            print(f"O menor preço de combustível escolhido é do posto {nomePosto3}, com o gasto total de R${menorPrecoCombustivel}")
             somaConsultadoPosto3 += litragem
         
         if menorPrecoCombustivel == precoGastoPosto1:
-            print(f"O menor preço de combustível é do posto {nomePosto1}, com o gasto total de R${menorPrecoCombustivel}")
+            print(f"O menor preço de combustível escolhido é do posto {nomePosto1}, com o gasto total de R${menorPrecoCombustivel}")
             somaConsultadoPosto1 += litragem
 
         #Maior preço que o cliente irá gastar
@@ -215,7 +196,7 @@ while opcao != "5":
             postoDieselMenor = nomePosto3
         
         #Contagem de vezes que os postos tiveram o menor preço
-        if tipoCombustivel == 1:
+        if tipoCombustivel == "1":
             if menorValorGasolina == gasolinaPreco1:
                 qtdMenorPreco_Posto1 += 1
 
@@ -225,7 +206,7 @@ while opcao != "5":
             elif menorValorGasolina == gasolinaPreco3: 
                 qtdMenorPreco_Posto3 += 1
 
-        elif tipoCombustivel == 2: 
+        elif tipoCombustivel == "2": 
             if menorValorEtanol == etanolPreco1:
                 qtdMenorPreco_Posto1 += 1
 
@@ -235,7 +216,7 @@ while opcao != "5":
             elif menorValorEtanol == etanolPreco3:
                 qtdMenorPreco_Posto3 += 1
 
-        elif tipoCombustivel == 3:
+        elif tipoCombustivel == "3":
             if menorValorDiesel == dieselPreco1:
                 qtdMenorPreco_Posto1 += 1
 
@@ -309,13 +290,13 @@ while opcao != "5":
             print("\n----------------------------------------------------------------")
             print("Informações da última pesquisa realizada ")
             print("----------------------------------------------------------------")
-            print(f"Tipo de combustível: {nomeDoCombustivel}")
+            print(f"Tipo de combustível escolhido: {nomeDoCombustivel}")
             print(f"Litragem do combustível escolhido: {litragem} litros")
-            if tipoCombustivel == 1:
+            if tipoCombustivel == "1":
                 print(f"Menor valor do combustível escolhido é de R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}")
-            elif tipoCombustivel == 2: 
+            elif tipoCombustivel == "2": 
                 print(f"Menor valor do combustível escolhido é de: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}")
-            elif tipoCombustivel == 3:
+            elif tipoCombustivel == "3":
                 print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\n")
 
 
@@ -361,13 +342,14 @@ while opcao != "5":
             print(f"Quantidade de vezes que cada posto teve o menor preço: ")
             print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
             print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
-            print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
+            print(f"{nomePosto3}: {qtdMenorPreco_Posto3}\n")
             print("-------------------------------------------------------")
             
-            print("Média de litros consultados por posto: ")
+            print("Média de litros consultados por posto")
+            print("-------------------------------------------------------")
             print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.1f} litros")
             print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.1f} litros")
-            print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.1f} litros")
+            print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.1f} litros\n")
             print("-------------------------------------------------------")
 
             print("Relação de preços")
