@@ -28,26 +28,26 @@ mediaLitrosCons_posto3 = 0
 print("----------------------------------------------------------------------------------------")
 print("                                  CADASTRO DOS POSTOS                                   ")
 print("----------------------------------------------------------------------------------------")
-
-"""nomePosto1 = input("Digite o nome do primeiro posto: ")
+print("PRIMEIRO POSTO")
+nomePosto1 = input("Digite o nome do primeiro posto: ")
 gasolinaPreco1 = float(input(f"Digite o preço da gasolina no posto {nomePosto1}: "))
 etanolPreco1 = float(input(f"Digite o preço do etanol no posto {nomePosto1}: "))
 dieselPreco1 = float(input(f"Digite o preço do diesel no posto {nomePosto1}: "))
-print("\n")
-
+print("----------------------------------------------------------------------------------------")
+print("SEGUNDO POSTO")
 nomePosto2 = input("Digite o nome do segundo posto: ")
 gasolinaPreco2 = float(input(f"Digite o preço da gasolina no posto {nomePosto2}: "))
 etanolPreco2 = float(input(f"Digite o preço do etanol no posto {nomePosto2}: "))
 dieselPreco2 = float(input(f"Digite o preço do diesel no posto {nomePosto2}: "))
-print("\n")
-
+print("----------------------------------------------------------------------------------------")
+print("TERCEIRO POSTO")
 nomePosto3 = input("Digite o nome do terceiro posto: ")
 gasolinaPreco3 = float(input(f"Digite o preço da gasolina no posto {nomePosto3}: "))
 etanolPreco3 = float(input(f"Digite o preço do etanol no posto {nomePosto3}: "))
 dieselPreco3 = float(input(f"Digite o preço do diesel no posto {nomePosto3}: "))
-print("\n")"""
 
-#Isso aqui é só para teste
+
+"""#Isso aqui é só para teste
 nomePosto1 = "Posto1"
 nomePosto2 = "Posto2"
 nomePosto3 = "Posto3"
@@ -63,7 +63,7 @@ dieselPreco2 = 4
 gasolinaPreco3 = 10
 etanolPreco3 = 6
 dieselPreco3 = 3
-
+"""
 opcao = "0"
 while opcao != "5":
     print("----------------------------------------------------------------------------------------")
@@ -380,9 +380,10 @@ if contadorConsultas != 0:
     print(f"{nomePosto1}: {qtdMenorPreco_Posto1}")
     print(f"{nomePosto2}: {qtdMenorPreco_Posto2}")
     print(f"{nomePosto3}: {qtdMenorPreco_Posto3}")
-    print("-------------------------------------")
+    print("-----------------------------------------")
 
     print("Média de litros consultados por posto: ")
+    print("-----------------------------------------")
     print(f"Posto {nomePosto1}: {mediaLitrosCons_posto1:.2f}")
     print(f"Posto {nomePosto2}: {mediaLitrosCons_posto2:.2f}")
     print(f"Posto {nomePosto3}: {mediaLitrosCons_posto3:.2f}")
