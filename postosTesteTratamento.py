@@ -285,6 +285,9 @@ while opcao != "5":
 
     #OPÇÃO 3
     elif opcao == "3":
+        print("\n----------------------------------------------------------------")
+        print("Postos e seus respectivos preços")
+        print("----------------------------------------------------------------")
         print("\n-------------------------")
         print(f"Posto {nomePosto1}")
         print("-------------------------")
@@ -349,11 +352,6 @@ while opcao != "5":
     else:
         print("ERRO! Digite apenas números de 1 a 5!\n")
         
-"""if opcao != "5":
-    limpar = input("Deseja limpar a tela? [S/N]: ")
-    if limpar == "S" or limpar == "s":
-        print('\033c', end='') #Para limpar tela caso o usuário deseje"
-"""
 if contadorConsultas != 0:
     print("RELATÓRIO FINAL")
     print("-----------------------------------------")
