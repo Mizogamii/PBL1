@@ -46,24 +46,6 @@ gasolinaPreco3 = float(input(f"Digite o preço da gasolina no posto {nomePosto3}
 etanolPreco3 = float(input(f"Digite o preço do etanol no posto {nomePosto3}: "))
 dieselPreco3 = float(input(f"Digite o preço do diesel no posto {nomePosto3}: "))
 
-
-"""#Isso aqui é só para teste
-nomePosto1 = "Posto1"
-nomePosto2 = "Posto2"
-nomePosto3 = "Posto3"
-
-gasolinaPreco1 = 2
-etanolPreco1 = 3
-dieselPreco1 = 6
-
-gasolinaPreco2 = 6
-etanolPreco2 = 2
-dieselPreco2 = 4
-
-gasolinaPreco3 = 10
-etanolPreco3 = 6
-dieselPreco3 = 3
-"""
 opcao = "0"
 while opcao != "5":
     print("----------------------------------------------------------------------------------------")
@@ -80,7 +62,7 @@ while opcao != "5":
         if opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
             print("ERRO! Digite apenas de 1 a 5!")
             opcao = str(input("Digite a opção que deseja seguir: "))
-        
+    print('\033c', end='')
     #OPÇÃO 1
     if opcao == "1":
         contadorConsultas += 1
@@ -294,9 +276,9 @@ while opcao != "5":
             print(f"Tipo de combustível escolhido: {nomeDoCombustivel}")
             print(f"Litragem do combustível escolhido: {litragem} litros")
             if tipoCombustivel == "1":
-                print(f"Menor valor do combustível escolhido é de R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}")
+                print(f"Menor valor do combustível escolhido é de R${menorValorGasolina:.2f} no posto {postoGasolinaMenor}\n")
             elif tipoCombustivel == "2": 
-                print(f"Menor valor do combustível escolhido é de: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}")
+                print(f"Menor valor do combustível escolhido é de: R${menorValorEtanol:.2f} no posto {postoEtanolMenor}\n")
             elif tipoCombustivel == "3":
                 print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\n")
 
@@ -308,27 +290,27 @@ while opcao != "5":
         print("-------------------------")
         print(f"Preços do posto {nomePosto1}")
         print("-------------------------")
-        print(f"Gasolina: R${gasolinaPreco1}")
-        print(f"Etanol: R${etanolPreco1}")
-        print(f"Diesel: R${dieselPreco1}")
+        print(f"Gasolina: R${gasolinaPreco1:.2f}")
+        print(f"Etanol: R${etanolPreco1:.2f}")
+        print(f"Diesel: R${dieselPreco1:.2f}")
  
         print("-------------------------")
         print(f"Posto {nomePosto2}")
         print("-------------------------")
         print(f"Preços do posto {nomePosto2}")
         print("-------------------------")
-        print(f"Gasolina: R${gasolinaPreco2}")
-        print(f"Etanol: R${etanolPreco2}")
-        print(f"Diesel: R${dieselPreco2}")
+        print(f"Gasolina: R${gasolinaPreco2:.2f}")
+        print(f"Etanol: R${etanolPreco2:.2f}")
+        print(f"Diesel: R${dieselPreco2:.2f}")
 
         print("\n-------------------------")
         print(f"Posto {nomePosto3}")
         print("-------------------------")
         print(f"Preços do posto {nomePosto3}")
         print("-------------------------")
-        print(f"Gasolina: R${gasolinaPreco3}")
-        print(f"Etanol: R${etanolPreco3}")
-        print(f"Diesel: R${dieselPreco3}\n")
+        print(f"Gasolina: R${gasolinaPreco3:.2f}")
+        print(f"Etanol: R${etanolPreco3:.2f}")
+        print(f"Diesel: R${dieselPreco3:.2f}\n")
 
     elif opcao == "4":
         if contadorConsultas == 0:
@@ -367,11 +349,11 @@ while opcao != "5":
     else:
         print("ERRO! Digite apenas números de 1 a 5!\n")
         
-if opcao != "5":
+"""if opcao != "5":
     limpar = input("Deseja limpar a tela? [S/N]: ")
     if limpar == "S" or limpar == "s":
         print('\033c', end='') #Para limpar tela caso o usuário deseje"
-
+"""
 if contadorConsultas != 0:
     print("RELATÓRIO FINAL")
     print("-----------------------------------------")
