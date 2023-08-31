@@ -62,7 +62,10 @@ while opcao != "5":
         if opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
             print("ERRO! Digite apenas de 1 a 5!")
             opcao = str(input("Digite a opção que deseja seguir: "))
+
+    #Limpando a tela
     print('\033c', end='')
+    
     #OPÇÃO 1
     if opcao == "1":
         contadorConsultas += 1
