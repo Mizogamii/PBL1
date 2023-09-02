@@ -285,7 +285,6 @@ while opcao != "5":
             elif tipoCombustivel == "3":
                 print(f"Menor valor do combustível escolhido é de: R${menorValorDiesel:.2f} no posto {postoDieselMenor}\n")
 
-
     #OPÇÃO 3
     elif opcao == "3":
         print("\n----------------------------------------------------------------")
